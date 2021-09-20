@@ -18,7 +18,7 @@ e_data = "%s.%s" % (opts.train, opts.english)
 
 sys.stderr.write("Loading Sim Aligner...")
 
-model = simalign.SentenceAligner(model="xlmr")
+model = simalign.SentenceAligner(model="bert")
 
 with open('xlmr_mwmf.a', 'w', encoding='utf-8') as mwmf:
   with open('xlmr_inter.a', 'w', encoding='utf-8') as inter:
