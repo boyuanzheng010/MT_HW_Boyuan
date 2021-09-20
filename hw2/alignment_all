@@ -20,9 +20,9 @@ sys.stderr.write("Loading Sim Aligner...")
 
 model = simalign.SentenceAligner(model="bert")
 
-with open('xlmr_mwmf.a', 'w', encoding='utf-8') as mwmf:
-  with open('xlmr_inter.a', 'w', encoding='utf-8') as inter:
-    with open('xlmr_itermax.a', 'w', encoding='utf-8') as itermax:
+with open('bert_mwmf.a', 'w', encoding='utf-8') as mwmf:
+  with open('bert_inter.a', 'w', encoding='utf-8') as inter:
+    with open('bert_itermax.a', 'w', encoding='utf-8') as itermax:
       for (f, e) in tqdm(zip(open(f_data), open(e_data))):
         result = model.get_word_aligns(f, e)
         # Write mwmf
