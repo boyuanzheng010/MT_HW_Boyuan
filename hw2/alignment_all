@@ -5,6 +5,10 @@ from collections import defaultdict
 from simalign import simalign
 from tqdm import tqdm
 
+import os
+package_name = 'sklearn'
+os.system(f'pip install {package_name}')
+
 
 optparser = optparse.OptionParser()
 optparser.add_option("-d", "--data", dest="train", default="split_data/fold_1/hansards", help="Data filename prefix (default=data)")

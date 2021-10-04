@@ -20,6 +20,7 @@ from transformers import BertModel, BertTokenizer, XLMModel, XLMTokenizer, Rober
 # from simalign.utils import get_logger
 from simalign.simalign.utils import get_logger
 
+
 LOG = get_logger(__name__)
 
 
