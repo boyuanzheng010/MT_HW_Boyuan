@@ -75,6 +75,58 @@ class Vocab:
 ######################################################################
 
 
+class LSTM(nn.Module):
+    """the class for lstm
+    """
+
+    def __init__(self, input_size, hidden_size):
+        super(LSTM, self).__init__()
+        self.hidden_size = hidden_size
+        self.input_size = input_size
+        # input-forget weights and bias
+        self.Wif = nn.Linear(input_size, hidden_size)
+        # hidden-forget weights and bias
+        self.Whf = nn.Linear(hidden_size, hidden_size)
+        # input-input weights and bias
+        self.Wii = nn.Linear(input_size, hidden_size)
+        # hidden-input weights and bias
+        self.Whi = nn.Linear(hidden_size, hidden_size)
+        # input-cell weights and bias
+        self.Wic = nn.Linear(input_size, hidden_size)
+        # hidden-cell weights and bias
+        self.Whc = nn.Linear(hidden_size, hidden_size)
+        # input-output weights and bias
+        self.Wio = nn.Linear(input_size, hidden_size)
+        # hidden-output weights and bias
+        self.Who = nn.Linear(hidden_size, hidden_size)
+
+    def forward(self, input, hidden_tuple):
+        """runs the forward pass of lstm
+        takes the hidden_tuple of (hidden_state, cell_state)
+        returns the output (h) and cell state (c)
+        """
+        # formalize the tensor to be of size (n)
+        Xt = input.view(-1)
+        # previous hidden state
+        Htp = hidden_tuple[0].view(-1)
+        # previous cell state
+        Ctp = hidden_tuple[1].view(-1)
+        # forget gate
+        Ft = torch.sigmoid(self.Wif(Xt) + self.Whf(Htp))
+        # input gate
+        It = torch.sigmoid(self.Wii(Xt) + self.Whi(Htp))
+        # cell gate
+        C = torch.tanh(self.Wic(Xt) + self.Whc(Htp))
+        # current cell state
+        Ct = Ft * Ctp + It * C
+        # output gate
+        Ot = torch.sigmoid(self.Wio(Xt) + self.Who(Htp))
+        # current hidden state
+        Ht = Ot * torch.tanh(Ct)
+        return Ht.view(1, 1, -1), Ct.view(1, 1, -1)
+
+#####################################################################
+
 def split_lines(input_file):
     """split a file like:
     first src sentence|||first tgt sentence
@@ -147,21 +199,16 @@ class EncoderRNN(nn.Module):
         See, for example, https://en.wikipedia.org/wiki/Long_short-term_memory#LSTM_with_a_forget_gate
         You should make your LSTM modular and re-use it in the Decoder.
         """
-        "*** YOUR CODE HERE ***"
-        raise NotImplementedError
-        return output, hidden
+        self.word_embeddings = nn.Embedding(input_size, hidden_size)
+        self.lstm = LSTM(hidden_size, hidden_size)
 
 
-    def forward(self, input, hidden):
+    def forward(self, input, hidden_tuple):
         """runs the forward pass of the encoder
         returns the output and the hidden state
-
-
-
-
         """
-        "*** YOUR CODE HERE ***"
-        raise NotImplementedError
+        embeds = self.word_embeddings(input).view(1, 1, -1)
+        output, hidden = self.lstm(embeds, hidden_tuple)
         return output, hidden
 
     def get_initial_hidden_state(self):
@@ -182,21 +229,39 @@ class AttnDecoderRNN(nn.Module):
         
         """Initilize your word embedding, decoder LSTM, and weights needed for your attention here
         """
-        "*** YOUR CODE HERE ***"
-        raise NotImplementedError
-
+        self.word_embeddings = nn.Embedding(self.output_size, self.hidden_size)
+        # alignment model weight matrix
+        self.attn = nn.Linear(2 * self.hidden_size, self.max_length)
+        # map combined state (embedding and attn_result) to hidden state
+        self.tohidden = nn.Linear(2 * self.hidden_size, self.hidden_size)
+        self.lstm = LSTM(self.hidden_size, self.hidden_size)
         self.out = nn.Linear(self.hidden_size, self.output_size)
 
-    def forward(self, input, hidden, encoder_outputs):
+    def forward(self, input, hidden_tuple, encoder_outputs):
         """runs the forward pass of the decoder
         returns the log_softmax, hidden state, and attn_weights
         
         Dropout (self.dropout) should be applied to the word embeddings.
         """
-        
-        "*** YOUR CODE HERE ***"
-        raise NotImplementedError
-        return log_softmax, hidden, attn_weights
+        # we will reshape all the matrices to one dimensional for easy computing
+        embeds = self.word_embeddings(input).view(-1)
+        embeds = self.dropout(embeds)
+        # get previous hidden states
+        cell = hidden_tuple[1].view(-1)
+        hidden = hidden_tuple[0].view(-1)
+        # caculate attention weights
+        attn_weights = self.attn(torch.cat((embeds, hidden), 0))
+        attn_weights = F.softmax(attn_weights, 0)
+        # apply attention weights and generate new hidden state
+        attn_result = torch.matmul(torch.unsqueeze(attn_weights, 0), encoder_outputs)
+        lstm_input = self.tohidden(torch.cat((embeds, attn_result[0]), 0))
+        lstm_input = torch.tanh(lstm_input)
+        # generate return values
+        hidden, cell = self.lstm(lstm_input, (hidden, cell))
+        output = self.out(hidden.view(-1))
+        log_softmax = F.log_softmax(output, 0)
+        # reshape back
+        return log_softmax.view(1, -1), (hidden, cell), attn_weights.view(1, -1)
 
     def get_initial_hidden_state(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
@@ -211,11 +276,35 @@ def train(input_tensor, target_tensor, encoder, decoder, optimizer, criterion, m
     encoder.train()
     decoder.train()
 
-    "*** YOUR CODE HERE ***"
-    raise NotImplementedError
+    optimizer.zero_grad()
+    # the cell state of encoder lstm
+    encoder_cell = encoder.get_initial_hidden_state()
+    input_length = input_tensor.size(0)
+    target_length = target_tensor.size(0)
+    encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
+    loss = 0
 
-    return loss.item() 
+    for ei in range(input_length):
+        encoder_hidden, encoder_cell = encoder(input_tensor[ei], (encoder_hidden, encoder_cell))
+        encoder_outputs[ei] += encoder_hidden[0, 0]
 
+    decoder_input = torch.tensor([[SOS_index]], device=device)
+    # the initial state of decoder lstm is the last of encoder
+    decoder_hidden = (encoder_hidden, encoder_cell)
+
+    for di in range(target_length):
+        decoder_output, decoder_hidden, decoder_attention = decoder(
+            decoder_input, decoder_hidden, encoder_outputs)
+        topv, topi = decoder_output.data.topk(1)
+        loss += criterion(decoder_output, target_tensor[di])
+        if decoder_input.item() == EOS_index:
+            break
+        decoder_input = topi.squeeze().detach()
+
+    loss.backward()
+    optimizer.step()
+
+    return loss.item() / target_length
 
 
 ######################################################################
@@ -233,17 +322,18 @@ def translate(encoder, decoder, sentence, src_vocab, tgt_vocab, max_length=MAX_L
         input_tensor = tensor_from_sentence(src_vocab, sentence)
         input_length = input_tensor.size()[0]
         encoder_hidden = encoder.get_initial_hidden_state()
+        encoder_cell = encoder.get_initial_hidden_state()
+        print(encoder_hidden)
 
         encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
 
         for ei in range(input_length):
-            encoder_output, encoder_hidden = encoder(input_tensor[ei],
-                                                     encoder_hidden)
+            encoder_output, encoder_hidden = encoder(input_tensor[ei],(encoder_hidden, encoder_cell))
             encoder_outputs[ei] += encoder_output[0, 0]
 
         decoder_input = torch.tensor([[SOS_index]], device=device)
 
-        decoder_hidden = encoder_hidden
+        decoder_hidden = (encoder_hidden, encoder_cell)
 
         decoded_words = []
         decoder_attentions = torch.zeros(max_length, max_length)
@@ -324,6 +414,7 @@ def clean(strx):
 ######################################################################
 
 def main():
+    # Set all parameters
     ap = argparse.ArgumentParser()
     ap.add_argument('--hidden_size', default=256, type=int,
                     help='hidden size of encoder/decoder, also word vector size')
@@ -353,11 +444,9 @@ def main():
                     help='output file for test translations')
     ap.add_argument('--load_checkpoint', nargs=1,
                     help='checkpoint file to start from')
-
     args = ap.parse_args()
 
     # process the training, dev, test files
-
     # Create vocab from training data, or load if checkpointed
     # also set iteration 
     if args.load_checkpoint is not None:
@@ -367,12 +456,13 @@ def main():
         tgt_vocab = state['tgt_vocab']
     else:
         iter_num = 0
+        # Build the vocabulary for both source and target language
         src_vocab, tgt_vocab = make_vocabs(args.src_lang,
                                            args.tgt_lang,
                                            args.train_file)
-
-    encoder = EncoderRNN(src_vocab.n_words, args.hidden_size).to(device)
-    decoder = AttnDecoderRNN(args.hidden_size, tgt_vocab.n_words, dropout_p=0.1).to(device)
+    # Define the encoder and decoder
+    encoder = EncoderRNN(src_vocab.n_words, args.hidden_size).to(device) # To-Write
+    decoder = AttnDecoderRNN(args.hidden_size, tgt_vocab.n_words, dropout_p=0.1).to(device) # To-Write
 
     # encoder/decoder weights are randomly initilized
     # if checkpointed, load saved weights
