@@ -1,0 +1,1064 @@
+2021-10-21 04:38:43,817 INFO Reading lines of data/fren.train.bpe...
+2021-10-21 04:38:44,155 INFO fr (src) vocab size: 1381
+2021-10-21 04:38:44,155 INFO en (tgt) vocab size: 1361
+2021-10-21 04:38:44,236 INFO Reading lines of data/fren.train.bpe...
+2021-10-21 04:38:44,245 INFO Reading lines of data/fren.dev.bpe...
+2021-10-21 04:38:44,506 INFO Reading lines of data/fren.test.bpe...
+2021-10-21 04:42:56,992 INFO time since start:252.2874767780304 (iter:5000 iter/n_iters:1%) loss_avg:3.4951
+> vous n etes pas un medecin .
+= you re not a doctor .
+< you re not a . . <EOS>
+
+> nous ne ra@@ jeu@@ n@@ is@@ sons pas .
+= we re not getting any younger .
+< we re not to . . . <EOS>
+
+2021-10-21 04:43:02,530 INFO Dev BLEU score: 0.07
+2021-10-21 04:47:16,563 DEBUG wrote checkpoint to state_0000010000.pt
+2021-10-21 04:47:16,563 INFO time since start:511.8586721420288 (iter:10000 iter/n_iters:2%) loss_avg:3.0131
+> c est un adorable jeune homme .
+= he s a lo@@ v@@ ely young man .
+< he s a a . . <EOS>
+
+> nous nous faisons des i@@ de@@ es .
+= we re ima@@ gin@@ ing thin@@ gs .
+< we re all to . . . <EOS>
+
+2021-10-21 04:47:22,020 INFO Dev BLEU score: 0.10
+2021-10-21 04:51:33,878 INFO time since start:769.1734657287598 (iter:15000 iter/n_iters:3%) loss_avg:2.7794
+> nous n avons pas peur de la mort .
+= we aren t afraid of death .
+< we re not going to . . <EOS>
+
+> elle est d un nat@@ u@@ re@@ l c@@ al@@ me .
+= she s a qui@@ et person .
+< she is a a a a a . . . . <EOS>
+
+2021-10-21 04:51:39,546 INFO Dev BLEU score: 0.13
+2021-10-21 04:55:44,879 DEBUG wrote checkpoint to state_0000020000.pt
+2021-10-21 04:55:44,879 INFO time since start:1020.174902677536 (iter:20000 iter/n_iters:4%) loss_avg:2.6249
+> vous etes une etudi@@ ante .
+= you are a student .
+< you re a liar . <EOS>
+
+> nous sommes tous de tres bons jou@@ eurs .
+= we re all very good pl@@ ay@@ ers .
+< we re very very of . . . <EOS>
+
+2021-10-21 04:55:50,295 INFO Dev BLEU score: 0.16
+2021-10-21 05:00:03,836 INFO time since start:1279.1317088603973 (iter:25000 iter/n_iters:5%) loss_avg:2.4889
+> on p@@ eu@@ t comp@@ ter sur elle .
+= she is a reli@@ able person .
+< you re going to to a a a . . <EOS>
+
+> c est toi la plus vieille .
+= you re the oldest .
+< you re the one . . <EOS>
+
+2021-10-21 05:00:09,503 INFO Dev BLEU score: 0.15
+2021-10-21 05:04:27,651 DEBUG wrote checkpoint to state_0000030000.pt
+2021-10-21 05:04:27,651 INFO time since start:1542.9463896751404 (iter:30000 iter/n_iters:6%) loss_avg:2.3261
+> je suis heureux avec ma co@@ p@@ ine .
+= i am happy with my gir@@ l@@ friend .
+< i m happy with my my . . <EOS>
+
+> nous sommes tous les mem@@ es .
+= we re all the same .
+< we re all reti@@ . . <EOS>
+
+2021-10-21 05:04:33,162 INFO Dev BLEU score: 0.19
+2021-10-21 05:08:51,929 INFO time since start:1807.2244136333466 (iter:35000 iter/n_iters:7%) loss_avg:2.1980
+> nous m@@ ang@@ er@@ ons a heu@@ res .
+= we are to ea@@ t at si@@ x .
+< we re in w@@ ing ing . . <EOS>
+
+> vous etes plus gran@@ des qu elle .
+= you are taller than she is .
+< you are taller than than . <EOS>
+
+2021-10-21 05:08:57,780 INFO Dev BLEU score: 0.19
+2021-10-21 05:13:23,757 DEBUG wrote checkpoint to state_0000040000.pt
+2021-10-21 05:13:23,757 INFO time since start:2079.0527210235596 (iter:40000 iter/n_iters:8%) loss_avg:2.0457
+> il est fort de@@ pri@@ me .
+= he is very de@@ pressed .
+< he is very very . . <EOS>
+
+> on vous demande au tel@@ ep@@ h@@ one .
+= you re w@@ an@@ ted on the tel@@ ep@@ h@@ one .
+< you are in of the the . . . <EOS>
+
+2021-10-21 05:13:29,648 INFO Dev BLEU score: 0.22
+2021-10-21 05:18:00,038 INFO time since start:2355.333796977997 (iter:45000 iter/n_iters:9%) loss_avg:1.9214
+> je suis un idiot compl@@ et .
+= i m a compl@@ ete idiot .
+< i m a a ki@@ ter . . <EOS>
+
+> je suis si@@ enne et elle est mi@@ enne .
+= i am h@@ ers and she is mine .
+< i am more than she she is . <EOS>
+
+2021-10-21 05:18:06,021 INFO Dev BLEU score: 0.22
+2021-10-21 05:22:35,364 DEBUG wrote checkpoint to state_0000050000.pt
+2021-10-21 05:22:35,365 INFO time since start:2630.660433769226 (iter:50000 iter/n_iters:10%) loss_avg:1.8095
+> on ne m in@@ vite pas aux f@@ etes .
+= i m not invited to parti@@ es .
+< i m not getting r@@ n@@ . . <EOS>
+
+> elles sont juste derriere vous .
+= they re right behind you .
+< they re right behind you . <EOS>
+
+2021-10-21 05:22:41,491 INFO Dev BLEU score: 0.25
+2021-10-21 05:27:15,578 INFO time since start:2910.8738701343536 (iter:55000 iter/n_iters:11%) loss_avg:1.7156
+> c est un travaill@@ eur ap@@ pl@@ ique .
+= he is a hard worker .
+< he is a a guy guy . <EOS>
+
+> vous n etes pas tou@@ bi@@ b .
+= you re not a doctor .
+< you re not a to . . <EOS>
+
+2021-10-21 05:27:21,608 INFO Dev BLEU score: 0.27
+2021-10-21 05:31:52,315 DEBUG wrote checkpoint to state_0000060000.pt
+2021-10-21 05:31:52,315 INFO time since start:3187.6105608940125 (iter:60000 iter/n_iters:12%) loss_avg:1.5777
+> le b@@ le@@ u vous si@@ ed su@@ per@@ b@@ ement .
+= you are very attractive in b@@ lu@@ e .
+< you re s@@ t@@ ing to to . . <EOS>
+
+> il a hu@@ it ans .
+= he s e@@ ight years old .
+< he s addicted old . <EOS>
+
+2021-10-21 05:31:58,164 INFO Dev BLEU score: 0.28
+2021-10-21 05:36:18,751 INFO time since start:3454.0469756126404 (iter:65000 iter/n_iters:13%) loss_avg:1.4620
+> elle est gentille .
+= she is gent@@ le .
+< she is nice . <EOS>
+
+> vous etes in@@ ou@@ bli@@ able .
+= you re un@@ forget@@ table .
+< you re un@@ forget@@ . . <EOS>
+
+2021-10-21 05:36:24,468 INFO Dev BLEU score: 0.31
+2021-10-21 05:40:47,794 DEBUG wrote checkpoint to state_0000070000.pt
+2021-10-21 05:40:47,795 INFO time since start:3723.090114593506 (iter:70000 iter/n_iters:14%) loss_avg:1.3686
+> je ne suis pas al@@ co@@ ol@@ ique .
+= i m not an al@@ co@@ h@@ ol@@ ic .
+< i m not a of i@@ . . <EOS>
+
+> nous sommes en train de divor@@ c@@ er .
+= we re getting divor@@ c@@ ed .
+< we re eating ing ing . <EOS>
+
+2021-10-21 05:40:53,462 INFO Dev BLEU score: 0.31
+2021-10-21 05:45:18,902 INFO time since start:3994.197019100189 (iter:75000 iter/n_iters:15%) loss_avg:1.2891
+> je suis seri@@ eux .
+= i m being serious .
+< i m serious . <EOS>
+
+> tu es tellement gentille !
+= you re so sweet .
+< you re so sweet . <EOS>
+
+2021-10-21 05:45:24,717 INFO Dev BLEU score: 0.32
+2021-10-21 05:49:48,227 DEBUG wrote checkpoint to state_0000080000.pt
+2021-10-21 05:49:48,228 INFO time since start:4263.523020029068 (iter:80000 iter/n_iters:16%) loss_avg:1.2047
+> je n en ai pas encore fini .
+= i m not done yet .
+< i m not finished yet . <EOS>
+
+> tu es trop confi@@ ante .
+= you re too trus@@ ting .
+< you re too trus@@ . . <EOS>
+
+2021-10-21 05:49:54,135 INFO Dev BLEU score: 0.32
+2021-10-21 05:54:21,391 INFO time since start:4536.686537265778 (iter:85000 iter/n_iters:17%) loss_avg:1.1373
+> je suis tres curi@@ eux .
+= i am very curious .
+< i m very curious . <EOS>
+
+> vous etes une personne ex@@ ec@@ r@@ able .
+= you re a terrible person .
+< you re a terrible person . <EOS>
+
+2021-10-21 05:54:27,299 INFO Dev BLEU score: 0.34
+2021-10-21 05:58:51,566 DEBUG wrote checkpoint to state_0000090000.pt
+2021-10-21 05:58:51,566 INFO time since start:4806.861966848373 (iter:90000 iter/n_iters:18%) loss_avg:1.0197
+> tu es bou@@ g@@ on .
+= you re gr@@ u@@ mp@@ y .
+< you re gr@@ u@@ mp@@ y . <EOS>
+
+> vous me tou@@ chez .
+= you re tou@@ ching me .
+< you re ex@@ ing me . <EOS>
+
+2021-10-21 05:58:57,311 INFO Dev BLEU score: 0.35
+2021-10-21 06:03:18,595 INFO time since start:5073.890203475952 (iter:95000 iter/n_iters:19%) loss_avg:1.0016
+> c est un etudiant de pre@@ mi@@ er c@@ y@@ cle .
+= he s an under@@ gr@@ ad .
+< he is a ty@@ l@@ l@@ d . <EOS>
+
+> tu es paress@@ euse .
+= you re lazy .
+< you re lazy . <EOS>
+
+2021-10-21 06:03:24,418 INFO Dev BLEU score: 0.37
+2021-10-21 06:07:54,083 DEBUG wrote checkpoint to state_0000100000.pt
+2021-10-21 06:07:54,083 INFO time since start:5349.378578662872 (iter:100000 iter/n_iters:20%) loss_avg:0.9237
+> il n est pas idiot .
+= he is not stupid .
+< he s not an . <EOS>
+
+> je suis aussi cho@@ qu@@ ee que toi .
+= i m as shoc@@ ked as you are .
+< i m as shoc@@ ked as you are . <EOS>
+
+2021-10-21 06:08:00,002 INFO Dev BLEU score: 0.37
+2021-10-21 06:12:28,652 INFO time since start:5623.947488307953 (iter:105000 iter/n_iters:21%) loss_avg:0.8733
+> elles se tr@@ ouvent juste derriere vous .
+= they re right behind you .
+< they re right behind you . <EOS>
+
+> tu es un mer@@ ve@@ ill@@ eux ami .
+= you re a wonderful friend .
+< you re a friend friend . <EOS>
+
+2021-10-21 06:12:34,447 INFO Dev BLEU score: 0.38
+2021-10-21 06:16:58,881 DEBUG wrote checkpoint to state_0000110000.pt
+2021-10-21 06:16:58,882 INFO time since start:5894.177024364471 (iter:110000 iter/n_iters:22%) loss_avg:0.8161
+> je ne vais pas si@@ gn@@ er c@@ ec@@ i .
+= i m not going to si@@ g@@ n this .
+< i m not going to n@@ a@@ this . . <EOS>
+
+> ils sont en des@@ sous .
+= they re do@@ w@@ n@@ st@@ ai@@ rs .
+< they re as@@ a@@ i@@ . <EOS>
+
+2021-10-21 06:17:04,694 INFO Dev BLEU score: 0.39
+2021-10-21 06:21:34,496 INFO time since start:6169.791925430298 (iter:115000 iter/n_iters:23%) loss_avg:0.7523
+> il dep@@ end completement de ses parents .
+= he is totally depend@@ ent on his parents .
+< he is always head on his parents body . <EOS>
+
+> nous comm@@ en@@ con@@ s a fatigu@@ er .
+= we re getting tired .
+< we re going to have your day . <EOS>
+
+2021-10-21 06:21:40,328 INFO Dev BLEU score: 0.40
+2021-10-21 06:26:10,463 DEBUG wrote checkpoint to state_0000120000.pt
+2021-10-21 06:26:10,463 INFO time since start:6445.758558988571 (iter:120000 iter/n_iters:24%) loss_avg:0.7076
+> tu es encore en train de gran@@ di@@ r .
+= you re still gro@@ w@@ ing .
+< you re still gro@@ w@@ ting . <EOS>
+
+> c est un sci@@ enti@@ fi@@ que .
+= he is a sci@@ enti@@ st .
+< he is a a than than than . <EOS>
+
+2021-10-21 06:26:16,247 INFO Dev BLEU score: 0.39
+2021-10-21 06:30:40,585 INFO time since start:6715.88006901741 (iter:125000 iter/n_iters:25%) loss_avg:0.6407
+> il est un bon per@@ d@@ ant .
+= he is a good lo@@ ser .
+< he s a good swim@@ ing . <EOS>
+
+> elles sont toutes din@@ gu@@ es .
+= they re all nuts .
+< they re all crazy . <EOS>
+
+2021-10-21 06:30:46,534 INFO Dev BLEU score: 0.40
+2021-10-21 06:35:16,689 DEBUG wrote checkpoint to state_0000130000.pt
+2021-10-21 06:35:16,689 INFO time since start:6991.984966516495 (iter:130000 iter/n_iters:26%) loss_avg:0.6286
+> ce n est pas une beau@@ te .
+= she is no beau@@ ty .
+< she s not a singer . <EOS>
+
+> tu es talentu@@ eux .
+= you re talented .
+< you re talented . <EOS>
+
+2021-10-21 06:35:22,450 INFO Dev BLEU score: 0.39
+2021-10-21 06:39:50,984 INFO time since start:7266.279438734055 (iter:135000 iter/n_iters:27%) loss_avg:0.5947
+> je n ec@@ r@@ is pas a votre sujet .
+= i m not writing about you .
+< i m not in help you . <EOS>
+
+> nous sommes enf@@ in seuls .
+= we re fin@@ ally alone .
+< we re fin@@ ally alone . <EOS>
+
+2021-10-21 06:39:56,723 INFO Dev BLEU score: 0.42
+2021-10-21 06:44:18,692 DEBUG wrote checkpoint to state_0000140000.pt
+2021-10-21 06:44:18,692 INFO time since start:7533.987816572189 (iter:140000 iter/n_iters:28%) loss_avg:0.5368
+> il ado@@ re les ch@@ ats .
+= he s a c@@ at lo@@ ver .
+< he s good at the t t . <EOS>
+
+> je suis seri@@ eux .
+= i m not b@@ lu@@ ff@@ ing .
+< i m serious . <EOS>
+
+2021-10-21 06:44:24,302 INFO Dev BLEU score: 0.42
+2021-10-21 06:48:45,827 INFO time since start:7801.1228013038635 (iter:145000 iter/n_iters:28%) loss_avg:0.5128
+> je suis plutot occupe .
+= i m ra@@ ther busy .
+< i m pretty busy . <EOS>
+
+> je suis un peu em@@ ec@@ he .
+= i m a bit ti@@ p@@ sy .
+< i m a little r@@ o@@ g . <EOS>
+
+2021-10-21 06:48:51,492 INFO Dev BLEU score: 0.42
+2021-10-21 06:53:11,489 DEBUG wrote checkpoint to state_0000150000.pt
+2021-10-21 06:53:11,489 INFO time since start:8066.784968852997 (iter:150000 iter/n_iters:30%) loss_avg:0.4812
+> je suis pre@@ occupee .
+= i m concerned .
+< i m in enough . <EOS>
+
+> il est si mi@@ gnon !
+= he s so cute .
+< he s so an ! <EOS>
+
+2021-10-21 06:53:17,176 INFO Dev BLEU score: 0.44
+2021-10-21 06:57:33,423 INFO time since start:8328.718177318573 (iter:155000 iter/n_iters:31%) loss_avg:0.4569
+> nous sommes certain@@ es .
+= we re certain .
+< we re old . <EOS>
+
+> il a hu@@ it ans .
+= he s e@@ ight years old .
+< he s e@@ te@@ . <EOS>
+
+2021-10-21 06:57:39,180 INFO Dev BLEU score: 0.44
+2021-10-21 07:02:01,003 DEBUG wrote checkpoint to state_0000160000.pt
+2021-10-21 07:02:01,004 INFO time since start:8596.299242258072 (iter:160000 iter/n_iters:32%) loss_avg:0.4263
+> vous res@@ t@@ ez avec tom n est ce pas ?
+= you re staying with tom right ?
+< you re staying t aren t you ? <EOS>
+
+> vous etes de@@ pri@@ me@@ es n est ce pas ?
+= you re de@@ pressed aren t you ?
+< you re de@@ pressed aren t you ? <EOS>
+
+2021-10-21 07:02:06,804 INFO Dev BLEU score: 0.44
+2021-10-21 07:06:29,838 INFO time since start:8865.13324713707 (iter:165000 iter/n_iters:33%) loss_avg:0.4052
+> je suis tres seri@@ eux .
+= i m very serious .
+< i m very serious . <EOS>
+
+> vous etes le seul a me com@@ prendre .
+= you re the only one who understan@@ ds me .
+< you re the only one who time me me . <EOS>
+
+2021-10-21 07:06:35,715 INFO Dev BLEU score: 0.43
+2021-10-21 07:10:53,427 DEBUG wrote checkpoint to state_0000170000.pt
+2021-10-21 07:10:53,427 INFO time since start:9128.722559690475 (iter:170000 iter/n_iters:34%) loss_avg:0.3778
+> elle a e@@ u du mal a se le@@ ver .
+= she str@@ u@@ gg@@ led to get up .
+< she s u@@ u@@ led to get up . <EOS>
+
+> je ne fais que bl@@ ag@@ u@@ er .
+= i am only j@@ oking .
+< i m only j@@ oking . <EOS>
+
+2021-10-21 07:10:59,165 INFO Dev BLEU score: 0.45
+2021-10-21 07:15:18,063 INFO time since start:9393.358642339706 (iter:175000 iter/n_iters:35%) loss_avg:0.3507
+> je suis ravi .
+= i m th@@ ri@@ ll@@ ed .
+< i m pleased . <EOS>
+
+> il est toujours deb@@ out .
+= he is still st@@ an@@ ding .
+< he is always n@@ m@@ <EOS>
+
+2021-10-21 07:15:23,685 INFO Dev BLEU score: 0.44
+2021-10-21 07:19:43,540 DEBUG wrote checkpoint to state_0000180000.pt
+2021-10-21 07:19:43,540 INFO time since start:9658.835515737534 (iter:180000 iter/n_iters:36%) loss_avg:0.3200
+> c est un travaill@@ eur du b@@ ati@@ ment .
+= he s a con@@ str@@ u@@ c@@ tion worker .
+< he is a big ber er er er . <EOS>
+
+> vous n etes pas ma mere .
+= you aren t my mother .
+< you aren t my mother . <EOS>
+
+2021-10-21 07:19:49,310 INFO Dev BLEU score: 0.44
+2021-10-21 07:24:05,542 INFO time since start:9920.837710142136 (iter:185000 iter/n_iters:37%) loss_avg:0.3076
+> je suis au ch@@ om@@ age .
+= i am out of work .
+< i m at the ch@@ ch@@ . . <EOS>
+
+> j ai toujours soif .
+= i m still thirsty .
+< i m always thirsty . <EOS>
+
+2021-10-21 07:24:11,338 INFO Dev BLEU score: 0.45
+2021-10-21 07:28:28,757 DEBUG wrote checkpoint to state_0000190000.pt
+2021-10-21 07:28:28,758 INFO time since start:10184.053272724152 (iter:190000 iter/n_iters:38%) loss_avg:0.2868
+> vous etes sur@@ men@@ ees .
+= you re over@@ wor@@ ked .
+< you re over@@ wor@@ ked . <EOS>
+
+> je ne vais pas vous faire de mal .
+= i m not going to hurt you .
+< i m not going to do you . <EOS>
+
+2021-10-21 07:28:34,515 INFO Dev BLEU score: 0.46
+2021-10-21 07:32:55,846 INFO time since start:10451.14119052887 (iter:195000 iter/n_iters:39%) loss_avg:0.2834
+> il a h@@ ate de vous parler .
+= he s eager to spea@@ k to you .
+< he is l@@ ain@@ ing with with re ation . <EOS>
+
+> je fais mon@@ tre de pati@@ ence .
+= i m being patient .
+< i m having ing ing book . <EOS>
+
+2021-10-21 07:33:01,561 INFO Dev BLEU score: 0.46
+2021-10-21 07:37:19,046 DEBUG wrote checkpoint to state_0000200000.pt
+2021-10-21 07:37:19,047 INFO time since start:10714.342599153519 (iter:200000 iter/n_iters:40%) loss_avg:0.2687
+> ils l ador@@ ent .
+= they re very fond of him .
+< they re very fond of him . <EOS>
+
+> j ai toujours faim .
+= i m always hungry .
+< i m still hungry . <EOS>
+
+2021-10-21 07:37:24,687 INFO Dev BLEU score: 0.46
+2021-10-21 07:41:42,530 INFO time since start:10977.82546043396 (iter:205000 iter/n_iters:41%) loss_avg:0.2473
+> vous etes plus gran@@ des qu elle .
+= you are taller than she is .
+< you are more than than . <EOS>
+
+> on dit qu il est mort ici .
+= he is said to have di@@ ed here .
+< he is said to be here . <EOS>
+
+2021-10-21 07:41:48,380 INFO Dev BLEU score: 0.46
+2021-10-21 07:46:09,160 DEBUG wrote checkpoint to state_0000210000.pt
+2021-10-21 07:46:09,161 INFO time since start:11244.456495046616 (iter:210000 iter/n_iters:42%) loss_avg:0.2272
+> je suis cul@@ ti@@ v@@ ee .
+= i m cul@@ tu@@ red .
+< i m ti@@ and . . <EOS>
+
+> je suis egalement de@@ bu@@ tant .
+= i m a begin@@ ner too .
+< i m too too too too . <EOS>
+
+2021-10-21 07:46:14,888 INFO Dev BLEU score: 0.47
+2021-10-21 07:50:33,794 INFO time since start:11509.089137792587 (iter:215000 iter/n_iters:43%) loss_avg:0.2219
+> je suis trop fatigue pour sor@@ ti@@ r cou@@ rir .
+= i m too tired to go out jo@@ gg@@ ing .
+< i m too tired to go k a m@@ . . <EOS>
+
+> il a peur de faire des erre@@ u@@ rs .
+= he s afraid of making mista@@ kes .
+< he is afraid of making mista@@ kes . <EOS>
+
+2021-10-21 07:50:39,522 INFO Dev BLEU score: 0.48
+2021-10-21 07:54:58,396 DEBUG wrote checkpoint to state_0000220000.pt
+2021-10-21 07:54:58,397 INFO time since start:11773.692327737808 (iter:220000 iter/n_iters:44%) loss_avg:0.2245
+> je suis grande .
+= i m tall .
+< i m tall . <EOS>
+
+> vous n etes qu un l@@ ache .
+= you re no@@ thing but a co@@ ward .
+< you re just a co@@ ward . <EOS>
+
+2021-10-21 07:55:04,107 INFO Dev BLEU score: 0.47
+2021-10-21 07:59:25,339 INFO time since start:12040.634722232819 (iter:225000 iter/n_iters:45%) loss_avg:0.2123
+> je suis mo@@ ins heureux maintenant .
+= i m not as happy now .
+< i m s@@ happy now now . <EOS>
+
+> je n en suis pas sur .
+= i am not certain about that .
+< i m not sure about that . <EOS>
+
+2021-10-21 07:59:30,954 INFO Dev BLEU score: 0.47
+2021-10-21 08:03:47,907 DEBUG wrote checkpoint to state_0000230000.pt
+2021-10-21 08:03:47,907 INFO time since start:12303.202347040176 (iter:230000 iter/n_iters:46%) loss_avg:0.1990
+> je ne suis pas actuellement ar@@ me .
+= i m now un@@ armed .
+< i m not mo@@ al@@ . . <EOS>
+
+> je suis seule .
+= i m alone .
+< i m alone . <EOS>
+
+2021-10-21 08:03:53,509 INFO Dev BLEU score: 0.48
+2021-10-21 08:08:10,583 INFO time since start:12565.878787755966 (iter:235000 iter/n_iters:47%) loss_avg:0.2019
+> tu es im@@ mor@@ ale .
+= you re un@@ et@@ h@@ ic@@ al .
+< you re un@@ ic@@ ic@@ ed . <EOS>
+
+> je ne suis pas fatigue .
+= i m not tired .
+< i am not tired . <EOS>
+
+2021-10-21 08:08:16,311 INFO Dev BLEU score: 0.47
+2021-10-21 08:12:39,699 DEBUG wrote checkpoint to state_0000240000.pt
+2021-10-21 08:12:39,699 INFO time since start:12834.994966983795 (iter:240000 iter/n_iters:48%) loss_avg:0.1857
+> je suis ab@@ as@@ our@@ di .
+= i m fl@@ ab@@ b@@ er@@ gas@@ ted .
+< i m res@@ . <EOS>
+
+> vous etes tout a fait attir@@ ant .
+= you re quite attractive .
+< you re quite attractive . <EOS>
+
+2021-10-21 08:12:45,493 INFO Dev BLEU score: 0.47
+2021-10-21 08:17:05,581 INFO time since start:13100.876500606537 (iter:245000 iter/n_iters:49%) loss_avg:0.1748
+> je ne suis pas vraiment occupe .
+= i m not really busy .
+< i m not really busy . <EOS>
+
+> nous sommes tres exc@@ ites .
+= we re very exc@@ ited .
+< we re very exc@@ . <EOS>
+
+2021-10-21 08:17:11,103 INFO Dev BLEU score: 0.49
+2021-10-21 08:21:26,501 DEBUG wrote checkpoint to state_0000250000.pt
+2021-10-21 08:21:26,502 INFO time since start:13361.797208070755 (iter:250000 iter/n_iters:50%) loss_avg:0.1626
+> il est le chef de mon de@@ par@@ tement .
+= he is the chi@@ e@@ f of my de@@ part@@ ment .
+< he is wor@@ ec@@ of my wor@@ d s . <EOS>
+
+> nous n allons pas ac@@ co@@ st@@ er .
+= we re not going as@@ ho@@ re .
+< we re not going to l@@ it . <EOS>
+
+2021-10-21 08:21:32,050 INFO Dev BLEU score: 0.48
+2021-10-21 08:25:51,512 INFO time since start:13626.807487010956 (iter:255000 iter/n_iters:51%) loss_avg:0.1637
+> vous etes en securite .
+= you re safe .
+< you re safe . <EOS>
+
+> elles sont a tes trou@@ s@@ ses .
+= they re out to get you .
+< they re staying to get you . <EOS>
+
+2021-10-21 08:25:57,109 INFO Dev BLEU score: 0.49
+2021-10-21 08:30:14,376 DEBUG wrote checkpoint to state_0000260000.pt
+2021-10-21 08:30:14,377 INFO time since start:13889.672233819962 (iter:260000 iter/n_iters:52%) loss_avg:0.1488
+> elle s@@ ecou@@ a la tete .
+= she sho@@ ok her head .
+< she is ok her him . <EOS>
+
+> je suis impatient de voir ton pere .
+= i m looking forward to seeing your father .
+< i m looking forward to your your . . <EOS>
+
+2021-10-21 08:30:19,982 INFO Dev BLEU score: 0.48
+2021-10-21 08:34:34,005 INFO time since start:14149.300978660583 (iter:265000 iter/n_iters:53%) loss_avg:0.1475
+> je suis desole . j ai ou@@ bli@@ e .
+= i m sorry . i for@@ got .
+< i m sorry i for@@ got . <EOS>
+
+> elle est in@@ consci@@ ente .
+= she is un@@ consci@@ ous .
+< she is in@@ u@@ ed . <EOS>
+
+2021-10-21 08:34:39,699 INFO Dev BLEU score: 0.48
+2021-10-21 08:38:59,284 DEBUG wrote checkpoint to state_0000270000.pt
+2021-10-21 08:38:59,285 INFO time since start:14414.580153942108 (iter:270000 iter/n_iters:54%) loss_avg:0.1366
+> nous le faisons pour l argent .
+= we re doing this for the money .
+< we re working on the the . <EOS>
+
+> vous avez dr@@ oit a votre opinion .
+= you are enti@@ t@@ led to your opinion .
+< you are enti@@ t@@ led to your opinion . <EOS>
+
+2021-10-21 08:39:05,004 INFO Dev BLEU score: 0.48
+2021-10-21 08:43:23,790 INFO time since start:14679.08522772789 (iter:275000 iter/n_iters:55%) loss_avg:0.1462
+> tu es une mer@@ ve@@ ill@@ euse amie .
+= you re a wonderful friend .
+< you re a wonderful friend . <EOS>
+
+> c est toi le professeur .
+= you re the teacher .
+< you re the teacher . <EOS>
+
+2021-10-21 08:43:29,516 INFO Dev BLEU score: 0.48
+2021-10-21 08:47:46,206 DEBUG wrote checkpoint to state_0000280000.pt
+2021-10-21 08:47:46,207 INFO time since start:14941.502204418182 (iter:280000 iter/n_iters:56%) loss_avg:0.1302
+> vous etes plus gran@@ ds que moi .
+= you re taller than i am .
+< you re taller than me . <EOS>
+
+> je suis des@@ i@@ reux de t aider .
+= i am w@@ ill@@ ing to help you .
+< i am w@@ ill@@ ing to help you . <EOS>
+
+2021-10-21 08:47:51,877 INFO Dev BLEU score: 0.47
+2021-10-21 08:52:11,733 INFO time since start:15207.028745412827 (iter:285000 iter/n_iters:56%) loss_avg:0.1261
+> vous etes tres eleg@@ ant .
+= you re very st@@ y@@ lish .
+< you re very st@@ . lish . <EOS>
+
+> je suis desole si je t ai derang@@ ee .
+= i m sorry if i disturbed you .
+< i m sorry if i disturbed you . <EOS>
+
+2021-10-21 08:52:17,431 INFO Dev BLEU score: 0.48
+2021-10-21 08:56:37,472 DEBUG wrote checkpoint to state_0000290000.pt
+2021-10-21 08:56:37,473 INFO time since start:15472.768370866776 (iter:290000 iter/n_iters:57%) loss_avg:0.1244
+> tu es mon meilleur ami .
+= you are my best friend .
+< you re my best friend . <EOS>
+
+> elle ado@@ re jouer au tennis .
+= she is fond of playing tennis .
+< she is ke to the tennis . <EOS>
+
+2021-10-21 08:56:43,200 INFO Dev BLEU score: 0.47
+2021-10-21 09:01:00,611 INFO time since start:15735.906132221222 (iter:295000 iter/n_iters:59%) loss_avg:0.1223
+> il est mon ep@@ ou@@ x .
+= he s my h@@ us@@ b@@ and .
+< he is my re@@ al my . . <EOS>
+
+> je vais en eu@@ ro@@ pe la semaine proch@@ aine .
+= i am going to eu@@ ro@@ pe next week .
+< i am going to call ch next next week . <EOS>
+
+2021-10-21 09:01:06,414 INFO Dev BLEU score: 0.49
+2021-10-21 09:05:28,337 DEBUG wrote checkpoint to state_0000300000.pt
+2021-10-21 09:05:28,338 INFO time since start:16003.633019447327 (iter:300000 iter/n_iters:60%) loss_avg:0.1132
+> je vais la deman@@ der en mari@@ age .
+= i m going to propo@@ se to her .
+< i m going to the mar@@ . . <EOS>
+
+> je suis et@@ onnee de vous voir .
+= i m surprised to see you .
+< i m surprised to see you . <EOS>
+
+2021-10-21 09:05:34,116 INFO Dev BLEU score: 0.49
+2021-10-21 09:09:55,972 INFO time since start:16271.26742053032 (iter:305000 iter/n_iters:61%) loss_avg:0.1271
+> il va venir chez moi ce soir .
+= he is to come to my hou@@ se tonight .
+< he is going to l@@ ay l@@ time . <EOS>
+
+> je m@@ ange une p@@ omm@@ e .
+= i am eating an app@@ le .
+< i m eating an app@@ le . <EOS>
+
+2021-10-21 09:10:01,810 INFO Dev BLEU score: 0.48
+2021-10-21 09:14:17,267 DEBUG wrote checkpoint to state_0000310000.pt
+2021-10-21 09:14:17,268 INFO time since start:16532.56328701973 (iter:310000 iter/n_iters:62%) loss_avg:0.1179
+> nous nous occup@@ ons de notre plan@@ ete .
+= we are concerned about our plan@@ et .
+< we re getting to lo@@ g@@ t . . <EOS>
+
+> vous etes o@@ di@@ eux .
+= you re ob@@ no@@ xious .
+< you re ob@@ no@@ xious . <EOS>
+
+2021-10-21 09:14:22,958 INFO Dev BLEU score: 0.49
+2021-10-21 09:18:42,769 INFO time since start:16798.06481909752 (iter:315000 iter/n_iters:63%) loss_avg:0.1079
+> je suis vraiment heureux .
+= i m really happy .
+< i m really happy . <EOS>
+
+> je vais nager ch@@ aque j@@ our .
+= i m going to swim e@@ very day .
+< i am going to swim over ay . . <EOS>
+
+2021-10-21 09:18:48,314 INFO Dev BLEU score: 0.49
+2021-10-21 09:23:07,633 DEBUG wrote checkpoint to state_0000320000.pt
+2021-10-21 09:23:07,634 INFO time since start:17062.929112672806 (iter:320000 iter/n_iters:64%) loss_avg:0.1054
+> il est l@@ y@@ ce@@ en .
+= he s a hi@@ gh school student .
+< he s h@@ t at s@@ us . <EOS>
+
+> elle est gentille .
+= she is kind .
+< she s nice . <EOS>
+
+2021-10-21 09:23:13,234 INFO Dev BLEU score: 0.49
+2021-10-21 09:27:24,622 INFO time since start:17319.9177339077 (iter:325000 iter/n_iters:65%) loss_avg:0.1117
+> elle est une condu@@ c@@ tri@@ ce l@@ am@@ ent@@ able .
+= she is a very poor dri@@ ver .
+< she is a gr@@ d@@ ful by her right . <EOS>
+
+> je ne suis pas occupe pour le moment .
+= i m not busy right now .
+< i m not busy at the moment . <EOS>
+
+2021-10-21 09:27:30,091 INFO Dev BLEU score: 0.48
+2021-10-21 09:31:51,886 DEBUG wrote checkpoint to state_0000330000.pt
+2021-10-21 09:31:51,886 INFO time since start:17587.18157839775 (iter:330000 iter/n_iters:66%) loss_avg:0.1039
+> je ne suis pas mal@@ heureux .
+= i m not mis@@ er@@ able .
+< i m not un@@ happy . <EOS>
+
+> vous etes sur@@ men@@ ee .
+= you re over@@ wor@@ ked .
+< you re over@@ wor@@ ked . <EOS>
+
+2021-10-21 09:31:57,479 INFO Dev BLEU score: 0.48
+2021-10-21 09:36:18,272 INFO time since start:17853.567887306213 (iter:335000 iter/n_iters:67%) loss_avg:0.1045
+> nous m@@ ang@@ er@@ ons a heu@@ res .
+= we are to ea@@ t at si@@ x .
+< we re having ang@@ ing s@@ sel@@ . <EOS>
+
+> nous sommes tous de tres bons jou@@ eurs .
+= we re all very good pl@@ ay@@ ers .
+< we re all very good at team . <EOS>
+
+2021-10-21 09:36:23,893 INFO Dev BLEU score: 0.49
+2021-10-21 09:40:37,785 DEBUG wrote checkpoint to state_0000340000.pt
+2021-10-21 09:40:37,786 INFO time since start:18113.08131170273 (iter:340000 iter/n_iters:68%) loss_avg:0.1020
+> nous sommes en train de nous des@@ hab@@ iller .
+= we re un@@ dr@@ ess@@ ing .
+< we re ar@@ w@@ ing . <EOS>
+
+> nous en avons completement termine ici .
+= we re all done here .
+< we re all done here . <EOS>
+
+2021-10-21 09:40:43,502 INFO Dev BLEU score: 0.49
+2021-10-21 09:45:01,767 INFO time since start:18377.062767744064 (iter:345000 iter/n_iters:69%) loss_avg:0.0918
+> il est plein de nouv@@ elles i@@ de@@ es .
+= he is full of new i@@ dea@@ s .
+< he is tired of the im@@ st@@ s . <EOS>
+
+> vous etes inqui@@ etes n est ce pas ?
+= you re worried aren t you ?
+< you re worried aren t you ? <EOS>
+
+2021-10-21 09:45:07,272 INFO Dev BLEU score: 0.50
+2021-10-21 09:49:25,643 DEBUG wrote checkpoint to state_0000350000.pt
+2021-10-21 09:49:25,644 INFO time since start:18640.939404010773 (iter:350000 iter/n_iters:70%) loss_avg:0.0979
+> nous ne sommes pas vos ennem@@ ies .
+= we re not your enemy .
+< we re not your enemy . <EOS>
+
+> tu m en@@ er@@ ves .
+= you re anno@@ ying me .
+< you re going to c@@ ght . <EOS>
+
+2021-10-21 09:49:31,293 INFO Dev BLEU score: 0.50
+2021-10-21 09:53:45,534 INFO time since start:18900.829889774323 (iter:355000 iter/n_iters:71%) loss_avg:0.1034
+> c est ma c@@ am@@ ar@@ ade de classe .
+= she s my cl@@ ass@@ ma@@ te .
+< he is my cl@@ ass@@ ma@@ te . <EOS>
+
+> il est prob@@ able qu il rem@@ porte la partie .
+= he is likely to win the ga@@ me .
+< he s likely to win the ga@@ me . <EOS>
+
+2021-10-21 09:53:51,150 INFO Dev BLEU score: 0.49
+2021-10-21 09:58:12,073 DEBUG wrote checkpoint to state_0000360000.pt
+2021-10-21 09:58:12,073 INFO time since start:19167.368988990784 (iter:360000 iter/n_iters:72%) loss_avg:0.0911
+> il m ob@@ ser@@ ve .
+= he s watching me .
+< he is me for the wat@@ . . <EOS>
+
+> nous ne faisons que comm@@ enc@@ er .
+= we re just beginning .
+< we re just starting . <EOS>
+
+2021-10-21 09:58:17,613 INFO Dev BLEU score: 0.50
+2021-10-21 10:02:36,456 INFO time since start:19431.75181698799 (iter:365000 iter/n_iters:73%) loss_avg:0.0946
+> vous etes tres effr@@ on@@ te .
+= you re very forward .
+< you re very forward . <EOS>
+
+> je ne suis pas ve@@ get@@ ari@@ en .
+= i m not a ve@@ get@@ ari@@ an .
+< i m not a ve@@ get@@ ari@@ an . <EOS>
+
+2021-10-21 10:02:42,057 INFO Dev BLEU score: 0.48
+2021-10-21 10:06:57,515 DEBUG wrote checkpoint to state_0000370000.pt
+2021-10-21 10:06:57,515 INFO time since start:19692.81086397171 (iter:370000 iter/n_iters:74%) loss_avg:0.0906
+> elle est de nouveau elle meme .
+= she is her old self again .
+< she s on the she is . <EOS>
+
+> je ne vais pas m ev@@ an@@ ou@@ ir .
+= i m not going to pas@@ s out .
+< i m not going to get bl@@ <EOS>
+
+2021-10-21 10:07:03,110 INFO Dev BLEU score: 0.49
+2021-10-21 10:11:21,450 INFO time since start:19956.74591565132 (iter:375000 iter/n_iters:75%) loss_avg:0.1000
+> c est un sci@@ enti@@ fi@@ que .
+= he is a sci@@ enti@@ st .
+< he is a str@@ sci@@ nice man . <EOS>
+
+> je suis un peu desor@@ i@@ ente .
+= i m a little confused .
+< i m a little confused . <EOS>
+
+2021-10-21 10:11:26,985 INFO Dev BLEU score: 0.49
+2021-10-21 10:15:45,514 DEBUG wrote checkpoint to state_0000380000.pt
+2021-10-21 10:15:45,514 INFO time since start:20220.809537410736 (iter:380000 iter/n_iters:76%) loss_avg:0.0888
+> exc@@ us@@ ez moi de vous inter@@ rom@@ p@@ re .
+= i m sorry to inter@@ ru@@ p@@ t you .
+< i m sorry sorry y@@ your a@@ a@@ ter@@ . <EOS>
+
+> tu es bou@@ g@@ on .
+= you re gr@@ u@@ mp@@ y .
+< you re gr@@ u@@ mp@@ y . <EOS>
+
+2021-10-21 10:15:51,012 INFO Dev BLEU score: 0.50
+2021-10-21 10:20:08,743 INFO time since start:20484.038444042206 (iter:385000 iter/n_iters:77%) loss_avg:0.0917
+> nous nous di@@ ri@@ ge@@ ons vers le su@@ d .
+= we re going sou@@ th .
+< we re going nor@@ th . <EOS>
+
+> je ne suis toujours pas sure .
+= i m still not sure .
+< i m still not sure . <EOS>
+
+2021-10-21 10:20:14,388 INFO Dev BLEU score: 0.49
+2021-10-21 10:24:33,681 DEBUG wrote checkpoint to state_0000390000.pt
+2021-10-21 10:24:33,682 INFO time since start:20748.97718143463 (iter:390000 iter/n_iters:78%) loss_avg:0.0869
+> tu es toujours viv@@ ant .
+= you re still alive .
+< you re still alive . <EOS>
+
+> je suis avec vous .
+= i m by your side .
+< i m friends with you . <EOS>
+
+2021-10-21 10:24:39,454 INFO Dev BLEU score: 0.50
+2021-10-21 10:29:01,178 INFO time since start:21016.473743915558 (iter:395000 iter/n_iters:79%) loss_avg:0.0887
+> il est en colere apres toi .
+= he is angry with you .
+< he is mad at you . <EOS>
+
+> je suis la fille d un genti@@ l@@ homme .
+= i am a gentleman s daugh@@ ter .
+< i m a now a co@@ m@@ now . <EOS>
+
+2021-10-21 10:29:06,901 INFO Dev BLEU score: 0.50
+2021-10-21 10:33:28,213 DEBUG wrote checkpoint to state_0000400000.pt
+2021-10-21 10:33:28,213 INFO time since start:21283.508694171906 (iter:400000 iter/n_iters:80%) loss_avg:0.0865
+> vous etes dec@@ u n est ce pas ?
+= you re disappointed aren t you ?
+< you re disappointed aren t you ? <EOS>
+
+> c est un travaill@@ eur du b@@ ati@@ ment .
+= he s a con@@ str@@ u@@ c@@ tion worker .
+< he is a big ti@@ p c@@ go@@ . <EOS>
+
+2021-10-21 10:33:33,953 INFO Dev BLEU score: 0.51
+2021-10-21 10:37:54,937 INFO time since start:21550.232276439667 (iter:405000 iter/n_iters:81%) loss_avg:0.0860
+> j ap@@ prends vite .
+= i m a qu@@ ick lear@@ ner .
+< i m a fast lear@@ ner . <EOS>
+
+> en re@@ al@@ ite il n est pas l impres@@ ari@@ o .
+= he is actu@@ ally not the man@@ ager .
+< he s ra@@ ther ted the man@@ ager . <EOS>
+
+2021-10-21 10:38:00,641 INFO Dev BLEU score: 0.49
+2021-10-21 10:42:23,627 DEBUG wrote checkpoint to state_0000410000.pt
+2021-10-21 10:42:23,627 INFO time since start:21818.922815084457 (iter:410000 iter/n_iters:82%) loss_avg:0.0903
+> tu es trop mai@@ g@@ re .
+= you re too skinny .
+< you re too skinny . <EOS>
+
+> je suis egalement pensi@@ onne .
+= i m reti@@ red too .
+< i m reti@@ red too . <EOS>
+
+2021-10-21 10:42:29,324 INFO Dev BLEU score: 0.49
+2021-10-21 10:46:49,022 INFO time since start:22084.317727327347 (iter:415000 iter/n_iters:83%) loss_avg:0.0846
+> nous n avons pas peur de la mort .
+= we aren t afraid of death .
+< they aren t afraid of death . <EOS>
+
+> je suis impati@@ ente .
+= i m impatient .
+< i m looking forward . <EOS>
+
+2021-10-21 10:46:54,620 INFO Dev BLEU score: 0.50
+2021-10-21 10:51:13,745 DEBUG wrote checkpoint to state_0000420000.pt
+2021-10-21 10:51:13,746 INFO time since start:22349.04105114937 (iter:420000 iter/n_iters:84%) loss_avg:0.0801
+> tout va bien .
+= i m fine .
+< i m all well . <EOS>
+
+> ils sont en des@@ sous .
+= they re do@@ w@@ n@@ st@@ ai@@ rs .
+< they re do@@ w@@ ar . <EOS>
+
+2021-10-21 10:51:19,508 INFO Dev BLEU score: 0.49
+2021-10-21 10:55:45,271 INFO time since start:22620.56693816185 (iter:425000 iter/n_iters:85%) loss_avg:0.0764
+> vous etes le seul a me com@@ prendre .
+= you re the only one who understan@@ ds me .
+< you re the only one who understan@@ ds . <EOS>
+
+> ils sont chanc@@ eux d etre en vie .
+= they re lucky to be alive .
+< they re lucky to be eating . . <EOS>
+
+2021-10-21 10:55:51,096 INFO Dev BLEU score: 0.50
+2021-10-21 11:00:11,471 DEBUG wrote checkpoint to state_0000430000.pt
+2021-10-21 11:00:11,471 INFO time since start:22886.766809940338 (iter:430000 iter/n_iters:86%) loss_avg:0.0747
+> je suis desole si je t ai derang@@ ee .
+= i m sorry if i disturbed you .
+< i m sorry if i disturbed you . <EOS>
+
+> je v@@ is dans une ville .
+= i m living in a to@@ wn .
+< i m living in a head . <EOS>
+
+2021-10-21 11:00:17,074 INFO Dev BLEU score: 0.49
+2021-10-21 11:04:37,822 INFO time since start:23153.117173194885 (iter:435000 iter/n_iters:87%) loss_avg:0.0835
+> vous etes plus gran@@ ds que moi .
+= you re taller than i am .
+< you re taller than me . <EOS>
+
+> il est en bonne con@@ di@@ tion ph@@ y@@ si@@ que .
+= he is in good ph@@ y@@ s@@ ic@@ al con@@ di@@ tion .
+< he s in good ph@@ y@@ s@@ ic@@ al con@@ di@@ tion . <EOS>
+
+2021-10-21 11:04:43,433 INFO Dev BLEU score: 0.48
+2021-10-21 11:09:06,473 DEBUG wrote checkpoint to state_0000440000.pt
+2021-10-21 11:09:06,473 INFO time since start:23421.768952846527 (iter:440000 iter/n_iters:88%) loss_avg:0.0835
+> je me trouve pres de la g@@ are .
+= i am n@@ ea@@ r the st@@ ation .
+< i m w@@ m@@ the h@@ ol@@ . . <EOS>
+
+> vous etes de@@ pri@@ me@@ es n est ce pas ?
+= you re de@@ pressed aren t you ?
+< you re de@@ pressed aren t you ? <EOS>
+
+2021-10-21 11:09:12,163 INFO Dev BLEU score: 0.49
+2021-10-21 11:13:31,164 INFO time since start:23686.459307432175 (iter:445000 iter/n_iters:89%) loss_avg:0.0808
+> je suis content que tu sois en av@@ ance .
+= i m glad you re early .
+< i m glad you re here . <EOS>
+
+> je ne vais pas te revoir .
+= i m not going to see you again .
+< i m not going to you . <EOS>
+
+2021-10-21 11:13:36,878 INFO Dev BLEU score: 0.50
+2021-10-21 11:17:53,717 DEBUG wrote checkpoint to state_0000450000.pt
+2021-10-21 11:17:53,718 INFO time since start:23949.013150691986 (iter:450000 iter/n_iters:90%) loss_avg:0.0720
+> c est un artiste cel@@ e@@ bre .
+= he s a fam@@ ous artist .
+< he is a fam@@ ous artist . <EOS>
+
+> elle est une artiste n@@ ee .
+= she s a born artist .
+< she is a gi@@ f@@ ted artist . <EOS>
+
+2021-10-21 11:17:59,256 INFO Dev BLEU score: 0.50
+2021-10-21 11:22:18,571 INFO time since start:24213.866898298264 (iter:455000 iter/n_iters:91%) loss_avg:0.0779
+> nous sommes pon@@ ctu@@ elles .
+= we re p@@ un@@ ctu@@ al .
+< we re p@@ un@@ ctu@@ al . <EOS>
+
+> je suis heureuse moi aussi .
+= i m happy too .
+< i m happy too . <EOS>
+
+2021-10-21 11:22:24,100 INFO Dev BLEU score: 0.50
+2021-10-21 11:26:39,962 DEBUG wrote checkpoint to state_0000460000.pt
+2021-10-21 11:26:39,962 INFO time since start:24475.257586717606 (iter:460000 iter/n_iters:92%) loss_avg:0.0703
+> je te donne une oc@@ c@@ as@@ ion .
+= i m giving you an op@@ por@@ tun@@ ity .
+< i m giving you you some k@@ dec@@ . <EOS>
+
+> il travaille sur un nouveau r@@ oman .
+= he is working on a new nov@@ el .
+< he s suffering a a po@@ at . . <EOS>
+
+2021-10-21 11:26:45,737 INFO Dev BLEU score: 0.50
+2021-10-21 11:30:59,761 INFO time since start:24735.056864500046 (iter:465000 iter/n_iters:93%) loss_avg:0.0732
+> je me rejouis de te voir ici .
+= i m glad to see you here .
+< i m glad to see you here . <EOS>
+
+> je suis fort .
+= i m strong .
+< i m very . <EOS>
+
+2021-10-21 11:31:05,408 INFO Dev BLEU score: 0.51
+2021-10-21 11:35:26,624 DEBUG wrote checkpoint to state_0000470000.pt
+2021-10-21 11:35:26,624 INFO time since start:25001.919507741928 (iter:470000 iter/n_iters:94%) loss_avg:0.0759
+> il est vraiment l@@ our@@ d .
+= he is th@@ ick as a bri@@ ck .
+< he s really g@@ g@@ ed . <EOS>
+
+> il d@@ ort prof@@ on@@ d@@ ement .
+= he s s@@ ound as@@ le@@ ep .
+< he s en@@ s@@ en@@ ly b@@ ving . <EOS>
+
+2021-10-21 11:35:32,363 INFO Dev BLEU score: 0.51
+2021-10-21 11:39:51,917 INFO time since start:25267.21232175827 (iter:475000 iter/n_iters:95%) loss_avg:0.0749
+> je suis egalement pensi@@ onne .
+= i m reti@@ red too .
+< i m reti@@ red you . <EOS>
+
+> je prends so@@ in de moi .
+= i m looking af@@ ter m@@ y@@ self .
+< i m taking c@@ int@@ of of . <EOS>
+
+2021-10-21 11:39:57,644 INFO Dev BLEU score: 0.50
+2021-10-21 11:44:15,512 DEBUG wrote checkpoint to state_0000480000.pt
+2021-10-21 11:44:15,512 INFO time since start:25530.807775259018 (iter:480000 iter/n_iters:96%) loss_avg:0.0775
+> je ne suis pas assez bonne pour toi .
+= i m not good enough for you .
+< i m not good enough for you . <EOS>
+
+> c est leur un@@ ique enfant .
+= he s their only child .
+< she is my child child child . <EOS>
+
+2021-10-21 11:44:21,209 INFO Dev BLEU score: 0.50
+2021-10-21 11:48:40,301 INFO time since start:25795.596363306046 (iter:485000 iter/n_iters:97%) loss_avg:0.0732
+> je suis en train d etudi@@ er .
+= i am studying now .
+< i am studying . <EOS>
+
+> vous etes grande .
+= you re big .
+< you are big . <EOS>
+
+2021-10-21 11:48:45,819 INFO Dev BLEU score: 0.50
+2021-10-21 11:53:03,784 DEBUG wrote checkpoint to state_0000490000.pt
+2021-10-21 11:53:03,784 INFO time since start:26059.079436302185 (iter:490000 iter/n_iters:98%) loss_avg:0.0770
+> nous ach@@ et@@ ons .
+= we re buying .
+< we re s@@ am@@ ing . <EOS>
+
+> tu n es pas mil@@ li@@ onn@@ aire .
+= you re not a mil@@ li@@ on@@ aire .
+< you re not a mil@@ li@@ on@@ aire . <EOS>
+
+2021-10-21 11:53:09,529 INFO Dev BLEU score: 0.50
+2021-10-21 11:57:25,680 INFO time since start:26320.9757270813 (iter:495000 iter/n_iters:99%) loss_avg:0.0680
+> je suis impressi@@ onne par votre francais .
+= i m impressed with your french .
+< i m impressed with your french . <EOS>
+
+> nous ne sommes pas ici pour t ar@@ ret@@ er .
+= we are not here to arr@@ est you .
+< we re not here to arr@@ est you . <EOS>
+
+2021-10-21 11:57:31,826 INFO Dev BLEU score: 0.50
+2021-10-21 12:02:04,417 DEBUG wrote checkpoint to state_0000500000.pt
+2021-10-21 12:02:04,418 INFO time since start:26599.713203907013 (iter:500000 iter/n_iters:100%) loss_avg:0.0686
+> nous sommes pi@@ eg@@ ees .
+= we re tr@@ app@@ ed .
+< we re tr@@ app@@ ed . <EOS>
+
+> on te regarde .
+= you re being wat@@ ched .
+< you re being wat@@ ched . <EOS>
+
+2021-10-21 12:02:10,127 INFO Dev BLEU score: 0.50
+input = on p@@ eu@@ t me faire confiance .
+output = i m busy re@@ m@@ . . <EOS>
+input = j en suis contente .
+output = i m happy with it . <EOS>
+input = vous etes tres genti@@ ls .
+output = you re very nice . <EOS>
+input = c est mon hero@@ s 
+output = he s my her@@ o . <EOS>

@@ -16,6 +16,7 @@ import logging
 import random
 import time
 from io import open
+from livelossplot import PlotLosses
 
 import matplotlib
 #if you are running on the gradx/ugradx/ another cluster, 
@@ -29,7 +30,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from nltk.translate.bleu_score import corpus_bleu
 from torch import optim
-
+import numpy as np
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
@@ -144,7 +145,7 @@ def split_lines(input_file):
 
 
 def make_vocabs(src_lang_code, tgt_lang_code, train_file):
-    """ Creates the vocabs for each of the langues based on the training corpus.
+    """ Creates the vocabs for each of the languages based on the training corpus.
     """
     src_vocab = Vocab(src_lang_code)
     tgt_vocab = Vocab(tgt_lang_code)
@@ -202,15 +203,16 @@ class EncoderRNN(nn.Module):
         self.word_embeddings = nn.Embedding(input_size, hidden_size)
         self.lstm = LSTM(hidden_size, hidden_size)
 
-
-    def forward(self, input, hidden_tuple):
+    # hidden includes Hidden Variables and Cell Variables
+    def forward(self, input, hidden):
         """runs the forward pass of the encoder
         returns the output and the hidden state
         """
         embeds = self.word_embeddings(input).view(1, 1, -1)
-        output, hidden = self.lstm(embeds, hidden_tuple)
+        output, hidden = self.lstm(embeds, hidden)
         return output, hidden
 
+    # Initialize hidden state with zeros
     def get_initial_hidden_state(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
 
@@ -224,45 +226,51 @@ class AttnDecoderRNN(nn.Module):
         self.output_size = output_size
         self.dropout_p = dropout_p
         self.max_length = max_length
-
         self.dropout = nn.Dropout(self.dropout_p)
         
         """Initilize your word embedding, decoder LSTM, and weights needed for your attention here
         """
+        # Set Word Embedding Layer
         self.word_embeddings = nn.Embedding(self.output_size, self.hidden_size)
-        # alignment model weight matrix
+        # Soft Attention Layer for Alignment
         self.attn = nn.Linear(2 * self.hidden_size, self.max_length)
-        # map combined state (embedding and attn_result) to hidden state
-        self.tohidden = nn.Linear(2 * self.hidden_size, self.hidden_size)
+        # Map embedding and attention weight to hidden state
+        self.hidden_mapping = nn.Linear(2 * self.hidden_size, self.hidden_size)
         self.lstm = LSTM(self.hidden_size, self.hidden_size)
+        # Map hidden representation to the probability of each token
         self.out = nn.Linear(self.hidden_size, self.output_size)
 
-    def forward(self, input, hidden_tuple, encoder_outputs):
+    def forward(self, input, hidden, encoder_outputs):
         """runs the forward pass of the decoder
         returns the log_softmax, hidden state, and attn_weights
         
         Dropout (self.dropout) should be applied to the word embeddings.
         """
-        # we will reshape all the matrices to one dimensional for easy computing
+        # Embed input to representation and flatten them to a 1-d vector
         embeds = self.word_embeddings(input).view(-1)
+        # Perform dropout to the embedding to improve performance
         embeds = self.dropout(embeds)
-        # get previous hidden states
-        cell = hidden_tuple[1].view(-1)
-        hidden = hidden_tuple[0].view(-1)
-        # caculate attention weights
+        # Fetch the hidden states from the previous time step
+        cell = hidden[1].view(-1)
+        hidden = hidden[0].view(-1)
+        # Calculate attention weight with embedding representation and hidden states
         attn_weights = self.attn(torch.cat((embeds, hidden), 0))
+        # Perform Softmax to attention weight
         attn_weights = F.softmax(attn_weights, 0)
-        # apply attention weights and generate new hidden state
+        # Get weighted hidden states by multiplying attention weight and previous hidden states
         attn_result = torch.matmul(torch.unsqueeze(attn_weights, 0), encoder_outputs)
-        lstm_input = self.tohidden(torch.cat((embeds, attn_result[0]), 0))
+        # Use weight to get the input for LSTM Module
+        lstm_input = self.hidden_mapping(torch.cat((embeds, attn_result[0]), 0))
         lstm_input = torch.tanh(lstm_input)
-        # generate return values
+        # Update hidden and cell using the LSTM Module
         hidden, cell = self.lstm(lstm_input, (hidden, cell))
+        # Map each representation to a probability
         output = self.out(hidden.view(-1))
         log_softmax = F.log_softmax(output, 0)
         # reshape back
         return log_softmax.view(1, -1), (hidden, cell), attn_weights.view(1, -1)
 
+    # Initialize with zero
     def get_initial_hidden_state(self):
         return torch.zeros(1, 1, self.hidden_size, device=device)
 
@@ -270,41 +278,44 @@ class AttnDecoderRNN(nn.Module):
 ######################################################################
 
 def train(input_tensor, target_tensor, encoder, decoder, optimizer, criterion, max_length=MAX_LENGTH):
+    # Initialize the Encoder parameters
     encoder_hidden = encoder.get_initial_hidden_state()
-
-    # make sure the encoder and decoder are in training mode so dropout is applied
+    encoder_cell = encoder.get_initial_hidden_state()
     encoder.train()
     decoder.train()
 
-    optimizer.zero_grad()
-    # the cell state of encoder lstm
-    encoder_cell = encoder.get_initial_hidden_state()
-    input_length = input_tensor.size(0)
-    target_length = target_tensor.size(0)
+    input_len = input_tensor.size(0)
+    target_len = target_tensor.size(0)
+    # Set the shape of encoder output as (max_length, hidden_size) and send tensor to device
     encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
     loss = 0
 
-    for ei in range(input_length):
+    for ei in range(input_len):
         encoder_hidden, encoder_cell = encoder(input_tensor[ei], (encoder_hidden, encoder_cell))
         encoder_outputs[ei] += encoder_hidden[0, 0]
 
     decoder_input = torch.tensor([[SOS_index]], device=device)
-    # the initial state of decoder lstm is the last of encoder
+    # Initialize the starting states of decoder from the encoder output: (hidden, cell)
     decoder_hidden = (encoder_hidden, encoder_cell)
 
-    for di in range(target_length):
+    # Perform decoding
+    for di in range(target_len):
+        # Decode for a time step
         decoder_output, decoder_hidden, decoder_attention = decoder(
             decoder_input, decoder_hidden, encoder_outputs)
         topv, topi = decoder_output.data.topk(1)
         loss += criterion(decoder_output, target_tensor[di])
+
         if decoder_input.item() == EOS_index:
             break
         decoder_input = topi.squeeze().detach()
 
+    # Set the optimizer and update
+    optimizer.zero_grad()
     loss.backward()
     optimizer.step()
 
-    return loss.item() / target_length
+    return loss.item() / target_len
 
 
 ######################################################################
@@ -391,8 +402,31 @@ def show_attention(input_sentence, output_words, attentions):
     you may want to use matplotlib.
     """
     
-    "*** YOUR CODE HERE ***"
-    raise NotImplementedError
+    # d is a array contain the input words
+    d = input_sentence.split(' ')
+    input_length = len(d) + 1
+    output_length = len(output_words) + 1
+    # turn to a 2d numpy array to store all the value
+    attention_map = np.squeeze(attentions)[0:output_length, 0:input_length]
+    # clean the plot
+    plt.clf()
+    # scaling the plot
+    f = plt.figure(figsize=(8, 8))
+    ax = f.add_subplot(1, 1, 1)
+    # image
+    i = ax.imshow(attention_map, interpolation='nearest', cmap='gray')
+    # set labels
+    ax.set_yticks(range(output_length))
+    ax.set_yticklabels(output_words[:output_length])
+
+    ax.set_xticks(range(input_length))
+    ax.set_xticklabels(d[:input_length], rotation=60)
+
+    ax.set_xlabel('Input')
+    ax.set_ylabel('Output')
+    # plot
+    ax.grid()
+    f.show()
 
 
 def translate_and_show_attention(input_sentence, encoder1, decoder1, src_vocab, tgt_vocab):
@@ -424,7 +458,7 @@ def main():
                     help='print loss info every this many training examples')
     ap.add_argument('--checkpoint_every', default=10000, type=int,
                     help='write out checkpoint every this many training examples')
-    ap.add_argument('--initial_learning_rate', default=0.001, type=int,
+    ap.add_argument('--initial_learning_rate', default=0.001, type=float,
                     help='initial learning rate')
     ap.add_argument('--src_lang', default='fr',
                     help='Source (input) language code, e.g. "fr"')
@@ -448,7 +482,7 @@ def main():
 
     # process the training, dev, test files
     # Create vocab from training data, or load if checkpointed
-    # also set iteration 
+    # also set iteration
     if args.load_checkpoint is not None:
         state = torch.load(args.load_checkpoint[0])
         iter_num = state['iter_num']
@@ -461,8 +495,8 @@ def main():
                                            args.tgt_lang,
                                            args.train_file)
     # Define the encoder and decoder
-    encoder = EncoderRNN(src_vocab.n_words, args.hidden_size).to(device) # To-Write
-    decoder = AttnDecoderRNN(args.hidden_size, tgt_vocab.n_words, dropout_p=0.1).to(device) # To-Write
+    encoder = EncoderRNN(src_vocab.n_words, args.hidden_size).to(device)
+    decoder = AttnDecoderRNN(args.hidden_size, tgt_vocab.n_words, dropout_p=0.1).to(device)
 
     # encoder/decoder weights are randomly initilized
     # if checkpointed, load saved weights
